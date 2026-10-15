@@ -12,7 +12,7 @@ export function shortHash(sha256: string) {
   return sha256.slice(0, 12)
 }
 
-// 存放位置的写法，和 info 登记时给的一样
+// 存放位置的写法，和 knowfeed 登记时给的一样
 export function locationOf(version: Pick<DatasetVersion, 'bucket' | 'object_key'>) {
   return `s3://${version.bucket}/${version.object_key}`
 }

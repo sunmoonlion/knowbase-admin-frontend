@@ -6,7 +6,7 @@ const validSession = {
   authenticated: true,
   user: {
     actor_id: 'b42cf3bb-d63e-5df5-a884-9c34286f2608',
-    app: 'knowledge',
+    app: 'knowbase',
     surface: 'admin',
     display_name: 'Template User',
     email: 'user@example.test',
@@ -32,9 +32,9 @@ describe('loadBrowserSession', () => {
     await expect(
       loadBrowserSession({
         backendUrl: 'http://admin-backend.internal:8000',
-        cookieHeader: 'sunmoonai_knowledge_admin_sid=opaque',
+        cookieHeader: 'sunmoonai_knowbase_admin_sid=opaque',
         correlationId: 'correlation-1234',
-        expectedApp: 'knowledge',
+        expectedApp: 'knowbase',
         fetchImpl: fetchImpl as typeof fetch,
       }),
     ).resolves.toMatchObject({
@@ -49,22 +49,22 @@ describe('loadBrowserSession', () => {
 
     await expect(
       loadBrowserSession({
-        backendUrl: 'http://knowledge-backend:8000',
-        cookieHeader: 'sunmoonai_knowledge_admin_sid=opaque-session',
+        backendUrl: 'http://knowbase-backend:8000',
+        cookieHeader: 'sunmoonai_knowbase_admin_sid=opaque-session',
         correlationId: 'correlation-1234',
-        expectedApp: 'knowledge',
+        expectedApp: 'knowbase',
         fetchImpl,
       }),
     ).resolves.toEqual(validSession)
 
     expect(fetchImpl).toHaveBeenCalledWith(
-      new URL('http://knowledge-backend:8000/api/auth/admin/me'),
+      new URL('http://knowbase-backend:8000/api/auth/admin/me'),
       expect.objectContaining({
         cache: 'no-store',
         redirect: 'manual',
         headers: {
           Accept: 'application/json',
-          Cookie: 'sunmoonai_knowledge_admin_sid=opaque-session',
+          Cookie: 'sunmoonai_knowbase_admin_sid=opaque-session',
           'x-correlation-id': 'correlation-1234',
         },
       }),
@@ -75,10 +75,10 @@ describe('loadBrowserSession', () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(new Response(null, { status: 401 }))
     await expect(
       loadBrowserSession({
-        backendUrl: 'http://knowledge-backend:8000',
+        backendUrl: 'http://knowbase-backend:8000',
         cookieHeader: '',
         correlationId: 'correlation-1234',
-        expectedApp: 'knowledge',
+        expectedApp: 'knowbase',
         fetchImpl,
       }),
     ).resolves.toBeNull()
@@ -92,10 +92,10 @@ describe('loadBrowserSession', () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(Response.json(payload))
     await expect(
       loadBrowserSession({
-        backendUrl: 'http://knowledge-backend:8000',
+        backendUrl: 'http://knowbase-backend:8000',
         cookieHeader: '',
         correlationId: 'correlation-1234',
-        expectedApp: 'knowledge',
+        expectedApp: 'knowbase',
         fetchImpl,
       }),
     ).rejects.toMatchObject({ code: 'contract_invalid' } satisfies Partial<AdminBackendError>)
@@ -105,10 +105,10 @@ describe('loadBrowserSession', () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(new Response(null, { status: 503 }))
     await expect(
       loadBrowserSession({
-        backendUrl: 'http://knowledge-backend:8000',
+        backendUrl: 'http://knowbase-backend:8000',
         cookieHeader: '',
         correlationId: 'correlation-1234',
-        expectedApp: 'knowledge',
+        expectedApp: 'knowbase',
         fetchImpl,
       }),
     ).rejects.toMatchObject({ code: 'backend_unavailable' } satisfies Partial<AdminBackendError>)

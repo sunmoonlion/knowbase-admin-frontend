@@ -1,4 +1,4 @@
-// 数据目录的契约对着样例检查。样例是 knowledge 后端的测试把管理接口的真实返回录下来的。
+// 数据目录的契约对着样例检查。样例是 knowbase 后端的测试把管理接口的真实返回录下来的。
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 

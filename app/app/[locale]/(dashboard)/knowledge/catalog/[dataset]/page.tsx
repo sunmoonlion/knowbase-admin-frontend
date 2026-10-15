@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('title'), robots: { index: false, follow: false } }
 }
 
-// 一个数据集的结构。只给 knowledge 管理员。
+// 一个数据集的结构。只给 knowbase 管理员。
 export default async function Page({
   params,
 }: {

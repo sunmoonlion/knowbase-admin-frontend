@@ -80,15 +80,15 @@
   },
   "KnowledgeIngestions": {
     "title": "Knowledge ingestions",
-    "description": "Knowledge Admin Dataset/Ingestion control surface (minimal shell)"
+    "description": "Knowbase Admin Dataset/Ingestion control surface (minimal shell)"
   },
   "registry": {
     "title": "Dataset registry",
     "lead": "Registered datasets: current version, file, location, and each dataset's version history.",
-    "readOnly": "Read-only. info registers datasets; to go back to an older version, use “register again” on info's intake page.",
+    "readOnly": "Read-only. knowfeed registers datasets; to go back to an older version, use “register again” on knowfeed's intake page.",
     "loading": "Loading…",
     "failed": "Could not load. Try again later.",
-    "off": "The dataset registry is off (KNOWLEDGE_DATASET_REGISTRY_ENABLED), so it is empty. Experts and agents can only query the default dataset.",
+    "off": "The dataset registry is off (KNOWBASE_DATASET_REGISTRY_ENABLED), so it is empty. Experts and agents can only query the default dataset.",
     "none": "No dataset has been registered yet.",
     "dataset": "Dataset",
     "currentVersion": "Current version",

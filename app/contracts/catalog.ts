@@ -1,4 +1,4 @@
-// 数据目录的契约（管理端，账 56）。字段以 knowledge-backend `interfaces/schemas/catalog.py` 为真源。
+// 数据目录的契约（管理端，账 56）。字段以 knowbase-backend `interfaces/schemas/catalog.py` 为真源。
 // 这些写法由 `tests/unit/catalog-contract-samples.test.ts` 对着样例（真后端录下来的返回）逐份检查。
 import { z } from 'zod'
 

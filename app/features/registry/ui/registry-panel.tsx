@@ -8,7 +8,7 @@ import { bytes, locationOf, shortHash } from '../model/registry'
 import { VersionHistory } from './version-history'
 
 // 数据集登记：每个数据集的现行版本、文件、存放位置、取回来没有；点开看版本历史。
-// 只读。登记由 info 发起，回退由 info 的「重新登记」做。
+// 只读。登记由 knowfeed 发起，回退由 knowfeed 的「重新登记」做。
 export function RegistryPanel() {
   const t = useTranslations('registry')
   const format = useFormatter()

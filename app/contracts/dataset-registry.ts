@@ -1,4 +1,4 @@
-// 数据集登记表的契约（管理面）。字段以 knowledge-backend `interfaces/schemas/catalog.py` 为真源。
+// 数据集登记表的契约（管理面）。字段以 knowbase-backend `interfaces/schemas/catalog.py` 为真源。
 // 这些写法由 `tests/unit/registry-contract-samples.test.ts` 对着样例（真后端录下来的返回）逐份检查。
 import { z } from 'zod'
 

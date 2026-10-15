@@ -41,7 +41,7 @@ export const adminNavigation: readonly AdminNavigationItem[] = [
     icon: BookOpen,
     requiredRoles: ['admin', 'operator'],
   },
-  // 数据目录（账 56 起只在管理端）：公共库里有什么。只读，只给 knowledge 管理员
+  // 数据目录（账 56 起只在管理端）：公共库里有什么。只读，只给 knowbase 管理员
   {
     key: 'knowledge-catalog',
     path: '/knowledge/catalog',
@@ -49,9 +49,9 @@ export const adminNavigation: readonly AdminNavigationItem[] = [
     icon: FolderOpen,
     requiredRoles: ['admin'],
   },
-  // 数据集登记（PRD/apps/knowledge.md 3.3）。只读，只给 knowledge 管理员
+  // 数据集登记（PRD/apps/knowledge.md 3.3）。只读，只给 knowbase 管理员
   {
-    key: 'knowledge-datasets',
+    key: 'knowbase-datasets',
     path: '/knowledge/datasets',
     labelKey: 'knowledgeDatasets',
     icon: Database,

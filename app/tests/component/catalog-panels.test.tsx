@@ -20,7 +20,7 @@ vi.mock('@/i18n/navigation', () => ({
   usePathname: () => '/knowledge/catalog',
 }))
 
-// 样例：knowledge 后端的测试把管理接口的真实返回录下来的（情景 catalog、catalog-default-only）
+// 样例：knowbase 后端的测试把管理接口的真实返回录下来的（情景 catalog、catalog-default-only）
 const fixtures = join(process.cwd(), 'preview/fixtures')
 let scenario = 'catalog'
 let asked: string[] = []
@@ -104,10 +104,10 @@ describe('数据目录（管理端）', () => {
     expect(push).toHaveBeenCalledWith('/knowledge/catalog')
   })
 
-  it('没有这家公司：说没有，指去 info 管理端发起采集；不给用户侧的申请入口（账 56）', async () => {
+  it('没有这家公司：说没有，指去 knowfeed 管理端发起采集；不给用户侧的申请入口（账 56）', async () => {
     page(<CatalogPanel query="000001" />)
     expect(await screen.findByText('没有「000001」的数据')).toBeInTheDocument()
-    expect(screen.getByText(/去 info 管理端的「证券采集」发起/)).toBeInTheDocument()
+    expect(screen.getByText(/去 knowfeed 管理端的「证券采集」发起/)).toBeInTheDocument()
     expect(screen.queryByRole('table')).toBeNull()
     expect(screen.queryByText('申请入库')).toBeNull()
   })

@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: t('title'), robots: { index: false, follow: false } }
 }
 
-// 只给 knowledge 管理员（PRD/apps/knowledge.md 3.3）。后端另有一道：普通用户调管理接口会被拒。
+// 只给 knowbase 管理员（PRD/apps/knowledge.md 3.3）。后端另有一道：普通用户调管理接口会被拒。
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
   await requireAnyRole(locale, ['admin'])

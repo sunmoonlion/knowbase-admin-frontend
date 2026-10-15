@@ -10,15 +10,15 @@ describe('admin navigation', () => {
     )
     expect(filterNavigationByRoles(['admin']).map((item) => item.key)).toContain('rich-reference')
     expect(findNavigationItem('/zh-CN/reference/details')?.key).toBe('reference')
-    // 数据集登记只给 knowledge 管理员
+    // 数据集登记只给 knowbase 管理员
     expect(filterNavigationByRoles(['admin']).map((item) => item.key)).toContain(
-      'knowledge-datasets',
+      'knowbase-datasets',
     )
     expect(filterNavigationByRoles(['operator']).map((item) => item.key)).not.toContain(
-      'knowledge-datasets',
+      'knowbase-datasets',
     )
-    expect(findNavigationItem('/zh-CN/knowledge/datasets')?.key).toBe('knowledge-datasets')
-    // 数据目录也只给 knowledge 管理员（账 56）；数据集页算在目录这一项下
+    expect(findNavigationItem('/zh-CN/knowledge/datasets')?.key).toBe('knowbase-datasets')
+    // 数据目录也只给 knowbase 管理员（账 56）；数据集页算在目录这一项下
     expect(filterNavigationByRoles(['admin']).map((item) => item.key)).toContain(
       'knowledge-catalog',
     )

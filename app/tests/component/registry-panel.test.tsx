@@ -9,7 +9,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { RegistryPanel } from '@/features/registry'
 import messages from '@/messages/zh-CN.json'
 
-// 样例：knowledge 后端的测试把管理接口的真实返回录下来的
+// 样例：knowbase 后端的测试把管理接口的真实返回录下来的
 const fixtures = join(process.cwd(), 'preview/fixtures')
 let scenario = 'full'
 let broken = false
@@ -66,12 +66,12 @@ describe('数据集登记', () => {
     expect(airport.getByText('sh600009-financials-9fd91db79529e208')).toBeInTheDocument()
     expect(airport.getByText('1994-12-31 至 2026-06-30')).toBeInTheDocument()
     expect(airport.getByText('2026年9月30日 10:30')).toBeInTheDocument()
-    expect(airport.getByText('service:info-backend')).toBeInTheDocument()
+    expect(airport.getByText('service:knowfeed-backend')).toBeInTheDocument()
     expect(airport.getByText('148.0 KB')).toBeInTheDocument()
     expect(airport.getByText(/^校验值 [0-9a-f]{12}…$/)).toBeInTheDocument()
     expect(
       airport.getByText(
-        's3://development-info-originals/info/securities/code=600009/datasets/sh600009-financials-9fd91db79529e208/sh600009-financials.sqlite',
+        's3://development-knowfeed-originals/knowfeed/securities/code=600009/datasets/sh600009-financials-9fd91db79529e208/sh600009-financials.sqlite',
       ),
     ).toBeInTheDocument()
     expect(airport.getByText('已取回，校验过')).toBeInTheDocument()

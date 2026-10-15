@@ -1,4 +1,4 @@
-// 管理端的契约对着样例检查。样例是 knowledge 后端的测试在测试库里登记了几个版本之后，把管理接口的真实返回录下来的。
+// 管理端的契约对着样例检查。样例是 knowbase 后端的测试在测试库里登记了几个版本之后，把管理接口的真实返回录下来的。
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -67,7 +67,7 @@ describe('登记表', () => {
   it('存放位置、校验值、大小的写法', () => {
     const current = registry.datasets[0].current!
     expect(locationOf(current)).toBe(
-      's3://development-info-originals/info/securities/code=600009/datasets/sh600009-financials-9fd91db79529e208/sh600009-financials.sqlite',
+      's3://development-knowfeed-originals/knowfeed/securities/code=600009/datasets/sh600009-financials-9fd91db79529e208/sh600009-financials.sqlite',
     )
     expect(shortHash(current.sha256)).toHaveLength(12)
     expect(current.sha256.startsWith(shortHash(current.sha256))).toBe(true)

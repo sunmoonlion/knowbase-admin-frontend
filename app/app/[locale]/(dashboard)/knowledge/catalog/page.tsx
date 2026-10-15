@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const one = (value: string | string[] | undefined) =>
   (Array.isArray(value) ? value[0] : value) || ''
 
-// 数据目录：我们看公共库里有什么（账 56，PRD/apps/knowledge.md 六之二）。只给 knowledge 管理员。
+// 数据目录：我们看公共库里有什么（账 56，PRD/apps/knowledge.md 六之二）。只给 knowbase 管理员。
 export default async function Page({
   params,
   searchParams,
