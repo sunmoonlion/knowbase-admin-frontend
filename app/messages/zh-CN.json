@@ -149,7 +149,7 @@
       "updated": "更新时间",
       "builtIn": "随服务自带，不经登记",
       "id": "数据集标识",
-      "structureOnly": "这里只显示结构，不显示数据。要查数，在 investment 里问专家或代理。",
+      "structureOnly": "这里只显示结构，不显示数据。要查数，在 knowbench 里问专家或代理。",
       "tables": "表",
       "noTables": "这个数据集里没有装数据的表。",
       "tableSize": "{rows} 行 · {columns} 列",

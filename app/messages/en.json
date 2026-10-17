@@ -149,7 +149,7 @@
       "updated": "Updated",
       "builtIn": "Ships with the service, not registered",
       "id": "Dataset id",
-      "structureOnly": "Structure only, no data. To query numbers, ask an expert or agent in investment.",
+      "structureOnly": "Structure only, no data. To query numbers, ask an expert or agent in knowbench.",
       "tables": "Tables",
       "noTables": "This dataset has no data tables.",
       "tableSize": "{rows} rows · {columns} columns",
